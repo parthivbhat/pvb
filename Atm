@@ -1,0 +1,78 @@
+import java.util.Scanner;
+public class ATM{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int Balance=10000;
+        System.out.println("Welcome to ATM");
+        System.out.println("Insert your card");
+        System.out.println("Yes");
+        System.out.println("No");
+        String a=in.next();
+        if (a.equals("yes"))
+        {
+            System.out.println("Card inserted successfully");
+        }
+        else
+        {
+            System.out.println("Insert your Atm card");
+        }
+        System.out.println("Select your language");
+        System.out.println("\n 1.English \n 2.Kannada \n 3.Hindi");
+        int b=in.nextInt();
+        if(b==1)
+        {
+            System.out.println("You have choosen English");
+        }
+        else if(b==2)
+        {
+            System.out.println("You have choosen Kannada");
+        }
+        else if(b==3)
+        {
+            System.out.println("You have choosen Hindi");
+        }
+        else
+        {
+            System.out.println("Enter your choice correctly");
+        }
+        
+        System.out.println("Enter your PIN");
+        int c=in.nextInt();
+        if(c==1234)
+        {
+            System.out.println("Select options");
+            System.out.println("\n 1.Banlance enquiry \n 2.withdrawl \n 3.Exit");
+        }
+        else
+        {
+            System.out.println("Invalid pin!! \n pls enter your pin correctly  ");
+        }
+       int d=in.nextInt();
+       if(d==1)
+       {
+           System.out.println("Your Balance is :"+Balance);
+       }
+       
+       else if(d==2)
+       {
+           System.out.println("Enter the amount you want to withdrawl");
+           int amt=in.nextInt();
+           if(amt>=0&&amt<Balance)
+           { 
+               Balance=Balance-amt;
+               System.out.println("Your current Balance is:"+Balance);
+               
+           }
+           else
+           {
+               System.out.println("Insuffcient Balance");
+           }
+       }
+      else if(d==3)
+      {
+          System.out.println("Pls take your card ");
+      }
+       
+       }
+    }
