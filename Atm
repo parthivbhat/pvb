@@ -1,9 +1,9 @@
-import java.util.Scanner;
-public class ATM{
+{
     public static void main(String[] args)
     {
         Scanner in=new Scanner(System.in);
-        int Balance=10000;
+        double Balance=10000;
+        double amt=0;
         System.out.println("Welcome to ATM");
         System.out.println("Insert your card");
         System.out.println("Yes");
@@ -42,7 +42,7 @@ public class ATM{
         if(c==1234)
         {
             System.out.println("Select options");
-            System.out.println("\n 1.Banlance enquiry \n 2.withdrawl \n 3.Exit");
+            System.out.println("\n 1.Banlance enquiry \n 2.withdrawl \n 3.Deposit \n 4.exit ");
         }
         else
         {
@@ -57,7 +57,7 @@ public class ATM{
        else if(d==2)
        {
            System.out.println("Enter the amount you want to withdrawl");
-           int amt=in.nextInt();
+            amt=in.nextInt();
            if(amt>=0&&amt<Balance)
            { 
                Balance=Balance-amt;
@@ -69,10 +69,44 @@ public class ATM{
                System.out.println("Insuffcient Balance");
            }
        }
-      else if(d==3)
+       else if(d==3)
+       {
+           System.out.println("Enter the amout you want to deposit to your bank account");
+           int depo=in.nextInt();
+           System.out.println("Deposited amount is:"+depo);
+           Balance=Balance+depo;
+           System.out.println("Balance : "+Balance);
+       }
+      else if(d==4)
       {
           System.out.println("Pls take your card ");
       }
-       
+       System.out.println("Do you want to generate reciept");
+       System.out.println("yes");
+       System.out.println("no");
+       String op=in.next();
+       if(op.equals("yes"))
+       {
+           String bankName="AIML BANK";
+           String transactionDate="9/10/2024";
+           String transactionTime="10.45";
+           String accountNumber = "1234567890";
+           double transactionAmount = amt;
+           System.out.println("=================================");
+           System.out.println("            ATM RECEIPT          ");
+           System.out.println("=================================");
+           System.out.println("Bank Name: " + bankName);
+           System.out.println("Date :"+transactionDate);
+           System.out.println("Time :"+transactionTime);
+           System.out.println("Account Number :"+accountNumber);
+           System.out.println("Transaction amount :"+amt);
+           System.out.println("Balance After Transaction: " + Balance);
+           System.out.println("=================================");
+           System.out.println("Thank you for using our ATM!");
+           System.out.println("Please take your card.");
+           System.out.println("=================================");
+           
+           
+       }
        }
     }
